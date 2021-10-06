@@ -11,12 +11,35 @@
  *
  * 5. Aprašykite metodą "spausdintiDuomenis()", kuris atspausdina
  * visus trikampio duomenis (kraštines) į konsolę.
+ *
+ * 6. Papildykite klasę metodu, kuris apskaičiuoja ir grąžina
+ * trikampio perimetrą. Spausdinant trikampio duomenis
+ * atspausdinkite ir jo perimetrą.
+ *
+ * 7. Parašykite metodą, kuris nusako, ar toks trikampis gali
+ * egzistuoti (metodas turi grąžinti boolean reikšmę).
+ * Spausdindami duomenis pasakykite, ar toks trikampis gali
+ * egzistuoti.
+ *
+ * 8. Papildykite klasę metodu, kuris nurodo, ar trikampis yra
+ * statusis.
+ *
+ * 9. Sukurkite masyvą, kuris saugo trikampių reikšmes,
+ * panaudodami ciklą atspausdinkite visų masyvę esančių trikampių
+ * duomenis.
+ *
+ * 10. ND: Papildykite programą funkcionalumu, kuris trikampių
+ * masyvą užpildo trikampiais (50 reikšmių), kurių kraštinės yra
+ * atsitiktinės reikšmės.
+ *
+ * Papildoma: Vėliau programa masyvą prafiltravus
+ * paliktų tik egzistuojančius trikampius ir atspausdintų jų duomenis.
  */
 class Triangle{
     public a: number;
     public b: number;
     public c: number;
-   
+
     constructor(a:number, b:number, c:number){
         this.a = a;
         this.b = b;
@@ -29,9 +52,8 @@ class Triangle{
         console.log(`Triangle sides lengths are : a - ${this.a}, b - ${this.b}, c - ${this.c}`);
         console.log(`Perimetras = ${this.perimeter()}`);
         console.log(`Ar trikampis egzistuoja = ${this.formatBoolean(this.isExists())}`);
-        console.log(`Ar trikampis status = ${this.formatBoolean(this.arStatus())}`);
-        console.log(`--------`);
-        
+        console.log(`Ar trikampis statusis = ${this.arStatus ? 'Taip statusis': 'Ne nestatusis'}`); //ternary iskart spasudinant
+        console.log(`--------`);  
     }
 
     public perimeter() :number {
@@ -39,22 +61,24 @@ class Triangle{
     }
     
     public isExists() :boolean {
+        //metodas be 'get' ir su paprastu if
         // if(this.a + this.b > this.c &&
         //     this.a + this.c > this.b &&
         //     this.b + this.c > this.a){
         //         return true;
         //     }
         // return false;
+        //kadangi grazina boolean tai if galima supaprastinti iki:
         return this.a + this.b > this.c &&
                 this.a + this.c > this.b &&
                 this.b + this.c > this.a;
     }
 
-    public arStatus() :boolean {
+    public get arStatus() :boolean {
+        //metodas su 'get'
         return this.a**2 + this.b**2 === this.c**2 ||
                 this.a**2 + this.c**2 === this.b**2 ||
                 this.b**2 + this.c**2 === this.a**2;
-        
     }
 
     private formatBoolean(input:boolean) :string {
@@ -65,9 +89,15 @@ class Triangle{
         return input ? 'Taip': 'Ne';
     }
 
+    // private addTriangle(): void {
+    //     this.listOfTrikampiai.push()
+    // }
 }
-const trikampiai: Triangle[] = [new Triangle(3,3,5)];
 
+const trikampiai: Triangle[] = [];
+
+trikampiai.push(new Triangle(5,7,20))
+console.log(trikampiai);
 
 const triangle = new Triangle(5,7,22);
 const triangle2 = new Triangle(6,7,100);
