@@ -26,8 +26,11 @@ class Triangle{
 }
 
     public printSidesLenght(a:number,b:number,c:number):void{
-        console.log(`Triangle sides lengths are : a - ${a}, b - ${b}, c - ${c}`);
+        console.log(`Triangle sides lengths are : a - ${a}, b - ${b}, c - ${c}/n Perimetras = ${this.perimeter(a,b,c)}`);
 }
+    public perimeter(a:number, b:number, c:number):number{
+        return a+b+c;
+    }
 }
 
 const triangle = new Triangle(5,7,22);

@@ -21,7 +21,10 @@ var Triangle = /** @class */ (function () {
         this.printSidesLenght(this.a, this.b, this.c);
     }
     Triangle.prototype.printSidesLenght = function (a, b, c) {
-        console.log("Triangle sides lengths are : a - " + a + ", b - " + b + ", c - " + c);
+        console.log("Triangle sides lengths are : a - " + a + ", b - " + b + ", c - " + c + "/n Perimetras = " + this.perimeter(a, b, c));
+    };
+    Triangle.prototype.perimeter = function (a, b, c) {
+        return a + b + c;
     };
     return Triangle;
 }());
