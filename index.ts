@@ -64,7 +64,10 @@ class Triangle{
         // return 'Ne';
         return input ? 'Taip': 'Ne';
     }
+
 }
+const trikampiai: Triangle[] = [new Triangle(3,3,5)];
+
 
 const triangle = new Triangle(5,7,22);
 const triangle2 = new Triangle(6,7,100);
