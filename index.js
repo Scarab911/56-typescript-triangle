@@ -13,23 +13,24 @@
  * 5. Aprašykite metodą "spausdintiDuomenis()", kuris atspausdina
  * visus trikampio duomenis (kraštines) į konsolę.
  */
-var Triangle = /** @class */ (function () {
-    function Triangle(a, b, c) {
+class Triangle {
+    constructor(a, b, c) {
         this.a = a;
         this.b = b;
         this.c = c;
         this.printSidesLenght();
     }
-    Triangle.prototype.printSidesLenght = function () {
-        console.log("Triangle sides lengths are : a - " + this.a + ", b - " + this.b + ", c - " + this.c);
-        console.log("Perimetras = " + this.perimeter());
-        console.log("Ar trikampis egzistuoja = " + this.formatBoolean(this.isExists()));
-        console.log("--------");
-    };
-    Triangle.prototype.perimeter = function () {
+    printSidesLenght() {
+        console.log(`Triangle sides lengths are : a - ${this.a}, b - ${this.b}, c - ${this.c}`);
+        console.log(`Perimetras = ${this.perimeter()}`);
+        console.log(`Ar trikampis egzistuoja = ${this.formatBoolean(this.isExists())}`);
+        console.log(`Ar trikampis status = ${this.formatBoolean(this.arStatus())}`);
+        console.log(`--------`);
+    }
+    perimeter() {
         return this.a + this.b + this.c;
-    };
-    Triangle.prototype.isExists = function () {
+    }
+    isExists() {
         // if(this.a + this.b > this.c &&
         //     this.a + this.c > this.b &&
         //     this.b + this.c > this.a){
@@ -39,15 +40,23 @@ var Triangle = /** @class */ (function () {
         return this.a + this.b > this.c &&
             this.a + this.c > this.b &&
             this.b + this.c > this.a;
-    };
-    Triangle.prototype.formatBoolean = function (input) {
+    }
+    arStatus() {
+        if ((Math.pow(this.a, 2)) + (Math.pow(this.b, 2)) === (Math.pow(this.c, 2)) ||
+            (Math.pow(this.a, 2)) + (Math.pow(this.c, 2)) === (Math.pow(this.b, 2)) ||
+            (Math.pow(this.b, 2)) + (Math.pow(this.c, 2)) === (Math.pow(this.a, 2))) {
+            return true;
+        }
+        ;
+        return false;
+    }
+    formatBoolean(input) {
         if (input) {
             return 'Taip';
         }
         return 'Ne';
-    };
-    return Triangle;
-}());
-var triangle = new Triangle(5, 7, 22);
-var triangle2 = new Triangle(6, 7, 100);
-var triangle3 = new Triangle(6, 7, 8);
+    }
+}
+const triangle = new Triangle(5, 7, 22);
+const triangle2 = new Triangle(6, 7, 100);
+const triangle3 = new Triangle(6, 7, 8);

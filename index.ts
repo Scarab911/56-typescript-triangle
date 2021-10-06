@@ -29,6 +29,7 @@ class Triangle{
         console.log(`Triangle sides lengths are : a - ${this.a}, b - ${this.b}, c - ${this.c}`);
         console.log(`Perimetras = ${this.perimeter()}`);
         console.log(`Ar trikampis egzistuoja = ${this.formatBoolean(this.isExists())}`);
+        console.log(`Ar trikampis status = ${this.formatBoolean(this.arStatus())}`);
         console.log(`--------`);
         
     }
@@ -47,6 +48,15 @@ class Triangle{
         return this.a + this.b > this.c &&
                 this.a + this.c > this.b &&
                 this.b + this.c > this.a;
+    }
+
+    public arStatus() :boolean {
+        if( (this.a**2) + (this.b**2) === (this.c**2) ||
+            (this.a**2) + (this.c**2) === (this.b**2) ||
+            (this.b**2) + (this.c**2) === (this.a**2)){
+                    return true;
+                };
+                return false;
     }
 
     private formatBoolean(input:boolean) :string {
