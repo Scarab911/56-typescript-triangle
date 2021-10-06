@@ -18,15 +18,26 @@ var Triangle = /** @class */ (function () {
         this.a = a;
         this.b = b;
         this.c = c;
-        this.printSidesLenght(this.a, this.b, this.c);
+        this.printSidesLenght();
     }
-    Triangle.prototype.printSidesLenght = function (a, b, c) {
-        console.log("Triangle sides lengths are : a - " + a + ", b - " + b + ", c - " + c + "/n Perimetras = " + this.perimeter(a, b, c));
+    Triangle.prototype.printSidesLenght = function () {
+        console.log("Triangle sides lengths are : a - " + this.a + ", b - " + this.b + ", c - " + this.c);
+        console.log("Perimetras = " + this.perimeter());
+        console.log("Egzistuoja = " + this.isExists());
     };
-    Triangle.prototype.perimeter = function (a, b, c) {
-        return a + b + c;
+    Triangle.prototype.perimeter = function () {
+        return this.a + this.b + this.c;
+    };
+    Triangle.prototype.isExists = function () {
+        if (this.a + this.b > this.c &&
+            this.a + this.c > this.b &&
+            this.b + this.c > this.a) {
+            return true;
+        }
+        return false;
     };
     return Triangle;
 }());
 var triangle = new Triangle(5, 7, 22);
 var triangle2 = new Triangle(6, 7, 100);
+var triangle3 = new Triangle(6, 7, 8);

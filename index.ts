@@ -22,17 +22,30 @@ class Triangle{
         this.b = b;
         this.c = c;
 
-        this.printSidesLenght(this.a,this.b,this.c);
-}
+        this.printSidesLenght();
+    }
 
-    public printSidesLenght(a:number,b:number,c:number):void{
-        console.log(`Triangle sides lengths are : a - ${a}, b - ${b}, c - ${c}/n Perimetras = ${this.perimeter(a,b,c)}`);
-}
-    public perimeter(a:number, b:number, c:number):number{
-        return a+b+c;
+    public printSidesLenght():void{
+        console.log(`Triangle sides lengths are : a - ${this.a}, b - ${this.b}, c - ${this.c}`);
+        console.log(`Perimetras = ${this.perimeter()}`);
+        console.log(`Egzistuoja = ${this.isExists()}`);
+    }
+
+    public perimeter():number{
+        return this.a+this.b+this.c;
+    }
+    
+    public isExists():boolean{
+        if(this.a +this.b > this.c &&
+            this.a+this.c > this.b &&
+            this.b+this.c>this.a){
+                return true
+            }
+        return false;
     }
 }
 
 const triangle = new Triangle(5,7,22);
 const triangle2 = new Triangle(6,7,100);
+const triangle3 = new Triangle(6,7,8);
 
