@@ -4,7 +4,7 @@ this.printSidesLenght(a,b,c);
 }
 
 printSidesLenght(a:number,b:number,c:number):void{
-console.log(`Triangle sides lenghts are : a -${a}, b - ${b}, c - ${c}`);
+console.log(`Triangle sides lengths are : a - ${a}, b - ${b}, c - ${c}`);
 }
 }
 

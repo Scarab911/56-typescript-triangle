@@ -4,7 +4,7 @@ var Triangle = /** @class */ (function () {
         this.printSidesLenght(a, b, c);
     }
     Triangle.prototype.printSidesLenght = function (a, b, c) {
-        console.log("Triangle sides lenghts are : a -" + a + ", b - " + b + ", c - " + c);
+        console.log("Triangle sides lengths are : a - " + a + ", b - " + b + ", c - " + c);
     };
     return Triangle;
 }());
