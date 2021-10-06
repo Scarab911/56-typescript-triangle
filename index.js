@@ -42,19 +42,16 @@ class Triangle {
             this.b + this.c > this.a;
     }
     arStatus() {
-        if ((Math.pow(this.a, 2)) + (Math.pow(this.b, 2)) === (Math.pow(this.c, 2)) ||
-            (Math.pow(this.a, 2)) + (Math.pow(this.c, 2)) === (Math.pow(this.b, 2)) ||
-            (Math.pow(this.b, 2)) + (Math.pow(this.c, 2)) === (Math.pow(this.a, 2))) {
-            return true;
-        }
-        ;
-        return false;
+        return Math.pow(this.a, 2) + Math.pow(this.b, 2) === Math.pow(this.c, 2) ||
+            Math.pow(this.a, 2) + Math.pow(this.c, 2) === Math.pow(this.b, 2) ||
+            Math.pow(this.b, 2) + Math.pow(this.c, 2) === Math.pow(this.a, 2);
     }
     formatBoolean(input) {
-        if (input) {
-            return 'Taip';
-        }
-        return 'Ne';
+        // if(input){
+        //     return 'Taip';
+        // }
+        // return 'Ne';
+        return input ? 'Taip' : 'Ne';
     }
 }
 const triangle = new Triangle(5, 7, 22);

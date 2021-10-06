@@ -51,19 +51,18 @@ class Triangle{
     }
 
     public arStatus() :boolean {
-        if( (this.a**2) + (this.b**2) === (this.c**2) ||
-            (this.a**2) + (this.c**2) === (this.b**2) ||
-            (this.b**2) + (this.c**2) === (this.a**2)){
-                    return true;
-                };
-                return false;
+        return this.a**2 + this.b**2 === this.c**2 ||
+                this.a**2 + this.c**2 === this.b**2 ||
+                this.b**2 + this.c**2 === this.a**2;
+        
     }
 
     private formatBoolean(input:boolean) :string {
-        if(input){
-            return 'Taip';
-        }
-        return 'Ne';
+        // if(input){
+        //     return 'Taip';
+        // }
+        // return 'Ne';
+        return input ? 'Taip': 'Ne';
     }
 }
 
