@@ -23,7 +23,7 @@ var Triangle = /** @class */ (function () {
     Triangle.prototype.printSidesLenght = function () {
         console.log("Triangle sides lengths are : a - " + this.a + ", b - " + this.b + ", c - " + this.c);
         console.log("Perimetras = " + this.perimeter());
-        console.log("Egzistuoja = " + this.isExists());
+        console.log("Ar trikampis egzistuoja = " + this.formatBoolean(this.isExists()));
     };
     Triangle.prototype.perimeter = function () {
         return this.a + this.b + this.c;
@@ -35,6 +35,12 @@ var Triangle = /** @class */ (function () {
             return true;
         }
         return false;
+    };
+    Triangle.prototype.formatBoolean = function (input) {
+        if (input) {
+            return 'Taip';
+        }
+        return 'Ne';
     };
     return Triangle;
 }());
