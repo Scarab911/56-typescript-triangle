@@ -24,17 +24,21 @@ var Triangle = /** @class */ (function () {
         console.log("Triangle sides lengths are : a - " + this.a + ", b - " + this.b + ", c - " + this.c);
         console.log("Perimetras = " + this.perimeter());
         console.log("Ar trikampis egzistuoja = " + this.formatBoolean(this.isExists()));
+        console.log("--------");
     };
     Triangle.prototype.perimeter = function () {
         return this.a + this.b + this.c;
     };
     Triangle.prototype.isExists = function () {
-        if (this.a + this.b > this.c &&
+        // if(this.a + this.b > this.c &&
+        //     this.a + this.c > this.b &&
+        //     this.b + this.c > this.a){
+        //         return true;
+        //     }
+        // return false;
+        return this.a + this.b > this.c &&
             this.a + this.c > this.b &&
-            this.b + this.c > this.a) {
-            return true;
-        }
-        return false;
+            this.b + this.c > this.a;
     };
     Triangle.prototype.formatBoolean = function (input) {
         if (input) {

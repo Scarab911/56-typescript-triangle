@@ -25,25 +25,31 @@ class Triangle{
         this.printSidesLenght();
     }
 
-    public printSidesLenght():void{
+    public printSidesLenght() :void {
         console.log(`Triangle sides lengths are : a - ${this.a}, b - ${this.b}, c - ${this.c}`);
         console.log(`Perimetras = ${this.perimeter()}`);
         console.log(`Ar trikampis egzistuoja = ${this.formatBoolean(this.isExists())}`);
+        console.log(`--------`);
+        
     }
 
-    public perimeter():number{
+    public perimeter() :number {
         return this.a+this.b+this.c;
     }
     
-    public isExists():boolean{
-        if(this.a + this.b > this.c &&
-            this.a + this.c > this.b &&
-            this.b + this.c > this.a){
-                return true;
-            }
-        return false;
+    public isExists() :boolean {
+        // if(this.a + this.b > this.c &&
+        //     this.a + this.c > this.b &&
+        //     this.b + this.c > this.a){
+        //         return true;
+        //     }
+        // return false;
+        return this.a + this.b > this.c &&
+                this.a + this.c > this.b &&
+                this.b + this.c > this.a;
     }
-    private formatBoolean(input:boolean):string{
+
+    private formatBoolean(input:boolean) :string {
         if(input){
             return 'Taip';
         }
