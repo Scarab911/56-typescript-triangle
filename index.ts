@@ -119,7 +119,7 @@ let trikampiai: Triangle[] = [];
 // };
 //prints data of each object in a trikampiai array
 
-/* SU FUNKCIJOM */
+/* Tas pats tik SU FUNKCIJOM below*/
 
 //random number
 function randomNumber(): number {
@@ -134,16 +134,14 @@ function createTriangles(quantity:number): void {
 }
 
 //calls a function to create needed number of triangles in a array
-createTriangles(10);
-console.log(trikampiai);
-createTriangles(10);
-console.log(trikampiai);
-createTriangles(30);
+createTriangles(50);
 console.log(trikampiai);
 
 //prints data of each object in a trikampiai array
+let count = 1;
 for(const element of trikampiai){
-    Triangle.printTriangleData();     
+    console.log(`${count++}.`);
+    element.printTriangleData();     
 };
 
 

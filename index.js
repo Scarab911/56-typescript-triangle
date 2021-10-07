@@ -103,7 +103,7 @@ let trikampiai = [];
 //     triangle.printTriangleData(a,b,c);     
 // };
 //prints data of each object in a trikampiai array
-/* SU FUNKCIJOM */
+/* Tas pats tik SU FUNKCIJOM below*/
 //random number
 function randomNumber() {
     return Math.floor(Math.random() * 100) + 1;
@@ -115,15 +115,13 @@ function createTriangles(quantity) {
     }
 }
 //calls a function to create needed number of triangles in a array
-createTriangles(10);
-console.log(trikampiai);
-createTriangles(10);
-console.log(trikampiai);
-createTriangles(30);
+createTriangles(50);
 console.log(trikampiai);
 //prints data of each object in a trikampiai array
+let count = 1;
 for (const element of trikampiai) {
-    Triangle.printTriangleData();
+    console.log(`${count++}.`);
+    element.printTriangleData();
 }
 ;
 // trikampiai.push(new Triangle(5,7,20))
