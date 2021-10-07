@@ -2,7 +2,7 @@
 /**
  * 1. Susikurkite TypeScript projektą
  *
- * 2. Parašykite programą, kuri padeda dirbti su trikampiais
+ * 2. Parašykite programą, kuri padeda dirbti su triangless
  *
  * 3. Aprašykite klasę "Trikampis", kuri turėtu tris atributus
  * simbolizuojančius visas tris trikampio kraštines (a, b, c).
@@ -45,14 +45,14 @@ class Triangle {
     printTriangleData() {
         console.log(`Triangle sides lengths are : a - ${this.a}, b - ${this.b}, c - ${this.c}`);
         console.log(`Perimetras = ${this.perimeter()}`);
-        console.log(`Ar trikampis egzistuoja = ${this.formatBoolean(this.isExists())}`);
+        console.log(`Ar trikampis egzistuoja = ${this.formatBoolean(this.isExists)}`);
         console.log(`Ar trikampis statusis = ${this.arStatus ? 'Taip statusis' : 'Ne nestatusis'}`); //ternary iskart spausdinant
         console.log(`--------`);
     }
     perimeter() {
         return this.a + this.b + this.c;
     }
-    isExists() {
+    get isExists() {
         //metodas be 'get' ir su paprastu if
         // if(this.a + this.b > this.c &&
         //     this.a + this.c > this.b &&
@@ -95,14 +95,14 @@ class Triangle {
 }
 /*kuriam ir dedam trikapius i sarasa*/
 // const triangle = new Triangle(5,7,22);
-let trikampiai = [];
-// trikampiai = triangle.createTriangles(trikampiai,5);
-// console.log(trikampiai);
-//prints trikampiai array of objects
-// for(const {a,b,c} of trikampiai){
+let triangles = [];
+// triangles = triangle.createTriangles(triangles,5);
+// console.log(triangles);
+//prints triangles array of objects
+// for(const {a,b,c} of triangles){
 //     triangle.printTriangleData(a,b,c);     
 // };
-//prints data of each object in a trikampiai array
+//prints data of each object in a triangles array
 /* Tas pats tik SU FUNKCIJOM below*/
 //random number
 function randomNumber() {
@@ -111,20 +111,30 @@ function randomNumber() {
 //function to create random triangles list
 function createTriangles(quantity) {
     for (let i = 0; i < quantity; i++) {
-        trikampiai.push(new Triangle(randomNumber(), randomNumber(), randomNumber()));
+        triangles.push(new Triangle(randomNumber(), randomNumber(), randomNumber()));
     }
 }
-//calls a function to create needed number of triangles in a array
-createTriangles(50);
-console.log(trikampiai);
-//prints data of each object in a trikampiai array
-let count = 1;
-for (const element of trikampiai) {
-    console.log(`${count++}.`);
-    element.printTriangleData();
+//function to print data from given array
+function printData(array) {
+    let count = 1;
+    for (const element of array) {
+        console.log(`${count++}.`);
+        element.printTriangleData();
+    }
+    ;
 }
-;
-// trikampiai.push(new Triangle(5,7,20))
-// console.log(trikampiai);
+//calls a function to create needed number of triangles in a array
+createTriangles(5);
+// createTriangles(50);
+//calls a function to print data of each object in a triangles array
+printData(triangles);
+//filter true triangles
+const trueTriangles = triangles.filter(triangle => triangle.isExists === true);
+//calls a function to print data of each object in a trueTriangles array
+console.log(`Data of all true triangles:`);
+console.log(`***************************`);
+printData(trueTriangles);
+// triangles.push(new Triangle(5,7,20))
+// console.log(triangles);
 // const triangle2 = new Triangle(6,7,100);
 // const triangle3 = new Triangle(6,7,8);
