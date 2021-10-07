@@ -124,8 +124,7 @@ function printData(array) {
     ;
 }
 //calls a function to create needed number of triangles in a array
-createTriangles(5);
-// createTriangles(50);
+createTriangles(50);
 //calls a function to print data of each object in a triangles array
 printData(triangles);
 //filter true triangles

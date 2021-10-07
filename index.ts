@@ -127,14 +127,14 @@ function randomNumber(): number {
 }
 
 //function to create random triangles list
-function createTriangles(quantity:number): void {
+function createTriangles(quantity: number): void {
     for (let i = 0; i < quantity; i++) {
         triangles.push(new Triangle(randomNumber(), randomNumber(), randomNumber()))  
     }
 }
 
 //function to print data from given array
-function printData(array:any): void {
+function printData(array: Triangle[]): void {
     let count = 1;
     for(const element of array){
         console.log(`${count++}.`);
@@ -142,8 +142,7 @@ function printData(array:any): void {
     };
 }
 //calls a function to create needed number of triangles in a array
-createTriangles(5);
-// createTriangles(50);
+createTriangles(50);
 
 //calls a function to print data of each object in a triangles array
 printData(triangles);
