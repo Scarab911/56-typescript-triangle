@@ -134,7 +134,7 @@ function createTriangles(quantity:number): void {
 }
 
 //function to print data from given array
-function printData(array:any): void{
+function printData(array:any): void {
     let count = 1;
     for(const element of array){
         console.log(`${count++}.`);
