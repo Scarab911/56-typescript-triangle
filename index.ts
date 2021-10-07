@@ -123,7 +123,7 @@ let triangles: Triangle[] = [];
 
 //random number
 function randomNumber(): number {
-    return Math.floor(Math.random() * 100) + 1;
+    return Math.floor(Math.random() * 99) + 1;
 }
 
 //function to create random triangles list
@@ -149,7 +149,7 @@ createTriangles(50);
 printData(triangles);
 
 //filter true triangles
-const trueTriangles = triangles.filter(triangle => triangle.isExists === true);
+const trueTriangles = triangles.filter(triangle => triangle.isExists);
 
 //calls a function to print data of each object in a trueTriangles array
 console.log(`Data of all true triangles:`);
