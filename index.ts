@@ -141,6 +141,7 @@ function printData(array: Triangle[]): void {
         element.printTriangleData();     
     };
 }
+
 //calls a function to create needed number of triangles in a array
 createTriangles(50);
 
