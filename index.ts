@@ -45,22 +45,22 @@ class Triangle{
         this.b = b;
         this.c = c;
 
-        this.printSidesLenght();
+        this.printTriangleData();
     }
 
-    public printSidesLenght() :void {
+    public printTriangleData(): void {
         console.log(`Triangle sides lengths are : a - ${this.a}, b - ${this.b}, c - ${this.c}`);
         console.log(`Perimetras = ${this.perimeter()}`);
         console.log(`Ar trikampis egzistuoja = ${this.formatBoolean(this.isExists())}`);
-        console.log(`Ar trikampis statusis = ${this.arStatus ? 'Taip statusis': 'Ne nestatusis'}`); //ternary iskart spasudinant
+        console.log(`Ar trikampis statusis = ${this.arStatus ? 'Taip statusis': 'Ne nestatusis'}`); //ternary iskart spausdinant
         console.log(`--------`);  
     }
 
-    public perimeter() :number {
+    public perimeter(): number {
         return this.a+this.b+this.c;
     }
     
-    public isExists() :boolean {
+    public isExists(): boolean {
         //metodas be 'get' ir su paprastu if
         // if(this.a + this.b > this.c &&
         //     this.a + this.c > this.b &&
@@ -74,14 +74,14 @@ class Triangle{
                 this.b + this.c > this.a;
     }
 
-    public get arStatus() :boolean {
+    public get arStatus(): boolean {
         //metodas su 'get'
         return this.a**2 + this.b**2 === this.c**2 ||
                 this.a**2 + this.c**2 === this.b**2 ||
                 this.b**2 + this.c**2 === this.a**2;
     }
 
-    private formatBoolean(input:boolean) :string {
+    private formatBoolean(input:boolean): string {
         // if(input){
         //     return 'Taip';
         // }
@@ -92,14 +92,41 @@ class Triangle{
     // private addTriangle(): void {
     //     this.listOfTrikampiai.push()
     // }
+    private get randomNumber(): number {
+        return Math.floor(Math.random() * 100) + 1;
+    }
+
+    public createTriangles(array:any, quantity:number): [] {
+        for (let i = 0; i < quantity; i++) {
+           array.push({a:this.randomNumber, b:this.randomNumber, c:this.randomNumber})  
+        }
+        return array;
+    }
+
+    public printTriangleList(array:any): void {
+        for(const element of array){
+            element.this.printTriangleData();
+        }
+    }
 }
 
-const trikampiai: Triangle[] = [];
-
-trikampiai.push(new Triangle(5,7,20))
-console.log(trikampiai);
-
+/*kuriam ir dedam trikapius i sarasa*/
 const triangle = new Triangle(5,7,22);
-const triangle2 = new Triangle(6,7,100);
-const triangle3 = new Triangle(6,7,8);
+
+let trikampiai: Triangle[] = [];
+
+trikampiai = triangle.createTriangles(trikampiai,5);
+console.log(trikampiai);
+const data = triangle.printTriangleList(trikampiai);
+console.log(data);
+
+
+
+
+
+// trikampiai.push(new Triangle(5,7,20))
+// console.log(trikampiai);
+
+// const triangle2 = new Triangle(6,7,100);
+// const triangle3 = new Triangle(6,7,8);
 

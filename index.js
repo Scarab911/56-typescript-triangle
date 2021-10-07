@@ -41,13 +41,13 @@ class Triangle {
         this.a = a;
         this.b = b;
         this.c = c;
-        this.printSidesLenght();
+        this.printTriangleData();
     }
-    printSidesLenght() {
+    printTriangleData() {
         console.log(`Triangle sides lengths are : a - ${this.a}, b - ${this.b}, c - ${this.c}`);
         console.log(`Perimetras = ${this.perimeter()}`);
         console.log(`Ar trikampis egzistuoja = ${this.formatBoolean(this.isExists())}`);
-        console.log(`Ar trikampis statusis = ${this.arStatus ? 'Taip statusis' : 'Ne nestatusis'}`); //ternary iskart spasudinant
+        console.log(`Ar trikampis statusis = ${this.arStatus ? 'Taip statusis' : 'Ne nestatusis'}`); //ternary iskart spausdinant
         console.log(`--------`);
     }
     perimeter() {
@@ -79,10 +79,32 @@ class Triangle {
         // return 'Ne';
         return input ? 'Taip' : 'Ne';
     }
+    // private addTriangle(): void {
+    //     this.listOfTrikampiai.push()
+    // }
+    get randomNumber() {
+        return Math.floor(Math.random() * 100) + 1;
+    }
+    createTriangles(array, quantity) {
+        for (let i = 0; i < quantity; i++) {
+            array.push({ a: this.randomNumber, b: this.randomNumber, c: this.randomNumber });
+        }
+        return array;
+    }
+    printTriangleList(array) {
+        for (const element of array) {
+            element.this.printTriangleData();
+        }
+    }
 }
-const trikampiai = [];
-trikampiai.push(new Triangle(5, 7, 20));
-console.log(trikampiai);
+/*kuriam ir dedam trikapius i sarasa*/
 const triangle = new Triangle(5, 7, 22);
-const triangle2 = new Triangle(6, 7, 100);
-const triangle3 = new Triangle(6, 7, 8);
+let trikampiai = [];
+trikampiai = triangle.createTriangles(trikampiai, 5);
+console.log(trikampiai);
+const data = triangle.printTriangleList(trikampiai);
+console.log(data);
+// trikampiai.push(new Triangle(5,7,20))
+// console.log(trikampiai);
+// const triangle2 = new Triangle(6,7,100);
+// const triangle3 = new Triangle(6,7,8);
