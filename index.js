@@ -41,7 +41,6 @@ class Triangle {
         this.a = a;
         this.b = b;
         this.c = c;
-        this.printTriangleData();
     }
     printTriangleData() {
         console.log(`Triangle sides lengths are : a - ${this.a}, b - ${this.b}, c - ${this.c}`);
@@ -79,9 +78,6 @@ class Triangle {
         // return 'Ne';
         return input ? 'Taip' : 'Ne';
     }
-    // private addTriangle(): void {
-    //     this.listOfTrikampiai.push()
-    // }
     get randomNumber() {
         return Math.floor(Math.random() * 100) + 1;
     }
@@ -91,19 +87,45 @@ class Triangle {
         }
         return array;
     }
-    printTriangleList(array) {
+    printTriangleListData(array) {
         for (const element of array) {
-            element.this.printTriangleData();
+            console.log(element);
         }
     }
 }
 /*kuriam ir dedam trikapius i sarasa*/
-const triangle = new Triangle(5, 7, 22);
+// const triangle = new Triangle(5,7,22);
 let trikampiai = [];
-trikampiai = triangle.createTriangles(trikampiai, 5);
+// trikampiai = triangle.createTriangles(trikampiai,5);
+// console.log(trikampiai);
+//prints trikampiai array of objects
+// for(const {a,b,c} of trikampiai){
+//     triangle.printTriangleData(a,b,c);     
+// };
+//prints data of each object in a trikampiai array
+/* SU FUNKCIJOM */
+//random number
+function randomNumber() {
+    return Math.floor(Math.random() * 100) + 1;
+}
+//function to create random triangles list
+function createTriangles(quantity) {
+    for (let i = 0; i < quantity; i++) {
+        trikampiai.push(new Triangle(randomNumber(), randomNumber(), randomNumber()));
+    }
+}
+//calls a function to create needed number of triangles in a array
+createTriangles(10);
 console.log(trikampiai);
-const data = triangle.printTriangleList(trikampiai);
-console.log(data);
+createTriangles(10);
+console.log(trikampiai);
+createTriangles(30);
+console.log(trikampiai);
+//prints data of each object in a trikampiai array
+for (const element of trikampiai) {
+    Triangle.printTriangleData();
+}
+;
 // trikampiai.push(new Triangle(5,7,20))
 // console.log(trikampiai);
 // const triangle2 = new Triangle(6,7,100);
