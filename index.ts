@@ -91,18 +91,18 @@ class Triangle{
         return Math.floor(Math.random() * 100) + 1;
     }
 
-    public createTriangles(array:any, quantity:number): [] {
-        for (let i = 0; i < quantity; i++) {
-           array.push({a:this.randomNumber, b:this.randomNumber, c:this.randomNumber})  
-        }
-        return array;
-    }
+    // public createTriangles(array:any, quantity:number): [] {
+    //     for (let i = 0; i < quantity; i++) {
+    //        array.push({a:this.randomNumber, b:this.randomNumber, c:this.randomNumber})  
+    //     }
+    //     return array;
+    // }
 
-    public printTriangleListData(array:any): void {
-        for(const element of array){
-           console.log(element);        
-        }
-    }
+    // public printTriangleListData(array:any): void {
+    //     for(const element of array){
+    //        console.log(element);        
+    //     }
+    // }
 }
 
 /*kuriam ir dedam trikapius i sarasa*/
